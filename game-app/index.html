@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-a-Mole Arcade</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Whack-a-Mole Arcade</h1>
+      <p class="tagline">Test your reflexes in this fast-paced browser game!</p>
+    </header>
+
+    <main class="game-container">
+      <section class="hud">
+        <div class="hud-item">
+          <span class="label">Score</span>
+          <span id="score" class="value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="label">High Score</span>
+          <span id="high-score" class="value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="label">Time</span>
+          <span id="timer" class="value">30</span>
+        </div>
+        <button id="start-button" class="primary-button">Start Game</button>
+      </section>
+
+      <section class="grid" aria-label="Whack-a-mole board">
+        <!-- Grid cells injected by JavaScript -->
+      </section>
+
+      <section class="instructions">
+        <h2>How to play</h2>
+        <ol>
+          <li>Press <strong>Start Game</strong> to begin a 30 second round.</li>
+          <li>Click the glowing mole as quickly as you can to score points.</li>
+          <li>Missing the mole or clicking an empty hole lowers your streak.</li>
+          <li>Keep an eye on the timer and chase a new personal best!</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Built with vanilla HTML, CSS, and JavaScript. Refresh the page for a new
+        challenge!
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
