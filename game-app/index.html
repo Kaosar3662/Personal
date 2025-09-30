@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neon Arena - 2D FPS</title>
+    <title>Whack-a-Mole Arcade</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="app-header">
-      <h1>Neon Arena</h1>
-      <p class="tagline">A fast-paced twin-stick FPS built in vanilla JavaScript.</p>
+      <h1>Whack-a-Mole Arcade</h1>
+      <p class="tagline">Test your reflexes in this fast-paced browser game!</p>
     </header>
 
-    <main class="game-shell">
-      <aside class="hud">
+    <main class="game-container">
+      <section class="hud">
         <div class="hud-item">
           <span class="label">Score</span>
           <span id="score" class="value">0</span>
@@ -23,46 +23,32 @@
           <span id="high-score" class="value">0</span>
         </div>
         <div class="hud-item">
-          <span class="label">Health</span>
-          <span id="health" class="value">3</span>
+          <span class="label">Time</span>
+          <span id="timer" class="value">30</span>
         </div>
-        <button id="start-button" class="primary-button">Start Match</button>
-      </aside>
+        <button id="start-button" class="primary-button">Start Game</button>
+      </section>
 
-      <section class="canvas-wrapper">
-        <canvas id="game-canvas" width="960" height="600" aria-label="Neon Arena battleground"></canvas>
-        <div id="status" class="status-message">
-          <h2>Lock. Aim. Survive.</h2>
-          <p>
-            WASD to move • Aim with your mouse • Hold Left Click or tap Space to
-            fire. Keep the drones away as long as possible!
-          </p>
-        </div>
+      <section class="grid" aria-label="Whack-a-mole board">
+        <!-- Grid cells injected by JavaScript -->
       </section>
 
       <section class="instructions">
         <h2>How to play</h2>
-        <ul>
-          <li>Press <strong>Start Match</strong> to spawn into the arena.</li>
-          <li>
-            Move with <strong>WASD</strong> or the arrow keys. Your agent always
-            aims at the cursor.
-          </li>
-          <li>
-            Hold <strong>Left Click</strong> or tap <strong>Space</strong> to
-            fire plasma bursts. Stay mobile for precision shots.
-          </li>
-          <li>
-            Colliding with a drone costs one health. Lose all three and the run
-            ends.
-          </li>
-          <li>Break your high score streak by staying alive and taking aim!</li>
-        </ul>
+        <ol>
+          <li>Press <strong>Start Game</strong> to begin a 30 second round.</li>
+          <li>Click the glowing mole as quickly as you can to score points.</li>
+          <li>Missing the mole or clicking an empty hole lowers your streak.</li>
+          <li>Keep an eye on the timer and chase a new personal best!</li>
+        </ol>
       </section>
     </main>
 
     <footer class="app-footer">
-      <p>Built with HTML5 Canvas, CSS, and vanilla JavaScript.</p>
+      <p>
+        Built with vanilla HTML, CSS, and JavaScript. Refresh the page for a new
+        challenge!
+      </p>
     </footer>
 
     <script src="script.js"></script>
