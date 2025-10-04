@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        font-family: cursive;
+        background-color: slateblue;
+      }
+
+      .calendar-container {
+        background-color: white;
+        width: 300px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .month-name {
+        margin: 0;
+        background-color: orangered;
+        color: white;
+        padding: 10px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .day-name {
+        font-size: 20px;
+        color: darkgray;
+      }
+
+      .day-number {
+        font-size: 80px;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .year {
+        margin: 20px 0;
+        font-size: 20px;
+        color: darkgray;
+        font-weight: 500;
+      }
+    </style>
+    <!-- ?html -->
+  </head>
+  <body>
+    <body>
+      <div class="calendar-container" bis_skin_checked="1">
+        <p class="month-name" id="month-name">month</p>
+        <p class="day-name" id="day-name">day</p>
+        <p class="day-number" id="day-number">00</p>
+        <p class="year" id="year">0000</p>
+      </div>
+
+      <!-- ?script  -->
+      <script>
+
+        const date = new Date();
+
+
+        const monthName = document.querySelector('#month-name');
+        const dayName = document.querySelector('#day-name');
+        const dayNumber = document.querySelector('#day-number');
+        const year = document.querySelector('#year');
+
+
+        monthName.textContent = date.toLocaleString('default', {
+          month: 'long',
+        });
+        dayName.textContent = date.toLocaleString('default', {
+          weekday: 'long',
+        });
+        dayNumber.textContent = date.getDate();
+        year.textContent = date.getFullYear();
+      </script>
+    </body>
+  </body>
+</html>
