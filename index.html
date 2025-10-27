@@ -3,86 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time</title>
+    <title>Hehe</title>
     <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+      }
       body {
-        margin: 0;
+        position: relative;
         display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-height: 100vh;
         justify-content: center;
-        height: 100vh;
         align-items: center;
-        font-family: cursive;
-        background-color: slateblue;
       }
-
-      .calendar-container {
-        background-color: white;
-        width: 300px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
+      button {
+        padding: 8px 16px;
+        background-color: rgb(211, 211, 211);
+        cursor: pointer;
       }
-
-      .month-name {
-        margin: 0;
-        background-color: orangered;
-        color: white;
-        padding: 10px;
-        font-size: 30px;
-        font-weight: bold;
+      #btnContainer {
+        display: flex;
+        gap: 24px;
       }
-
-      .day-name {
-        font-size: 20px;
-        color: darkgray;
-      }
-
-      .day-number {
-        font-size: 80px;
-        margin: 0;
-        font-weight: bold;
-      }
-
-      .year {
-        margin: 20px 0;
-        font-size: 20px;
-        color: darkgray;
-        font-weight: 500;
+      .success{
+        color:rgb(28, 189, 3);
       }
     </style>
-    <!-- ?html -->
   </head>
   <body>
-    <body>
-      <div class="calendar-container" bis_skin_checked="1">
-        <p class="month-name" id="month-name">month</p>
-        <p class="day-name" id="day-name">day</p>
-        <p class="day-number" id="day-number">00</p>
-        <p class="year" id="year">0000</p>
-      </div>
+    <h1 id="text">Do you like Coding??</h1>
+    <div id="btnContainer">
+      <button id="yes"><h2>Yes</h2></button>
+      <button id="no"><h2>No</h2></button>
+    </div>
 
-      <!-- ?script  -->
-      <script>
+<script>
+let yes = document.getElementById('yes'),
+    no = document.getElementById('no'),
+    text = document.getElementById('text'),
+    btnContainer = document.getElementById('btnContainer');
 
-        const date = new Date();
+no.addEventListener('click', () => {
+  text.textContent = 'You passed the test, Now go learn coding!';
+  text.classList.add("success")
+});
+
+yes.addEventListener('mouseenter', () => {
+  let maxX = window.innerWidth - yes.offsetWidth;
+  let maxY = window.innerHeight - yes.offsetHeight;
 
 
-        const monthName = document.querySelector('#month-name');
-        const dayName = document.querySelector('#day-name');
-        const dayNumber = document.querySelector('#day-number');
-        const year = document.querySelector('#year');
+  let randomX = Math.floor(Math.random() * maxX);
+  let randomY = Math.floor(Math.random() * maxY);
 
 
-        monthName.textContent = date.toLocaleString('default', {
-          month: 'long',
-        });
-        dayName.textContent = date.toLocaleString('default', {
-          weekday: 'long',
-        });
-        dayNumber.textContent = date.getDate();
-        year.textContent = date.getFullYear();
-      </script>
-    </body>
+  yes.style.position = 'absolute';
+  yes.style.left = randomX + 'px';
+  yes.style.top = randomY + 'px';
+});
+</script>
   </body>
 </html>
