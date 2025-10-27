@@ -11,7 +11,7 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 300;
-        transition: .1s ease-in;
+        transition: .01s ease-in;
       }
       body {
         position: relative;
@@ -55,6 +55,19 @@ no.addEventListener('click', () => {
 });
 
 yes.addEventListener('mouseenter', () => {
+  let maxX = window.innerWidth - yes.offsetWidth;
+  let maxY = window.innerHeight - yes.offsetHeight;
+
+
+  let randomX = Math.floor(Math.random() * maxX);
+  let randomY = Math.floor(Math.random() * maxY);
+
+
+  yes.style.position = 'absolute';
+  yes.style.left = randomX + 'px';
+  yes.style.top = randomY + 'px';
+});
+yes.addEventListener('click', () => {
   let maxX = window.innerWidth - yes.offsetWidth;
   let maxY = window.innerHeight - yes.offsetHeight;
 
